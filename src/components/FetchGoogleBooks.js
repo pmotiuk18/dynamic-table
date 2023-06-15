@@ -26,7 +26,7 @@ const FetchGoogleBooks = () => {
         return <div>LOADING...</div>
     }
 
-    return <Table data={books} />;
+    return <Table data={books}/>;
 }
 
 export default FetchGoogleBooks
