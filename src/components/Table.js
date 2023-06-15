@@ -1,12 +1,4 @@
-import {useState} from "react";
-
-export default function Table({data}) {
-    const [selectedRow, setSelectedRow] = useState(null);
-    console.log(selectedRow)
-
-    const handleRowClick = (selectedRow) => {
-        setSelectedRow(selectedRow)
-    }
+export default function Table({data, onRowClick, selectedRow}) {
     return (
         <table className="max-w-5xl my-0 mx-auto justify-center">
             <thead>
@@ -20,7 +12,7 @@ export default function Table({data}) {
             {data.map((book) => (
                 <tr
                     key={book.id}
-                    onClick={() => handleRowClick(book)}
+                    onClick={() => onRowClick(book)}
                     className={selectedRow === book ? 'bg-gray-500' : 'cursor-pointer bg-gray-700 '}
                 >
                     <td className="border-2 border-white text-white">{book.id}</td>

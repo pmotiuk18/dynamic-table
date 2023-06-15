@@ -6,6 +6,12 @@ const FetchGoogleBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [selectedRow, setSelectedRow] = useState(null);
+    console.log(selectedRow)
+
+    const handleRowClick = (selectedRow) => {
+        setSelectedRow(selectedRow)
+    }
 
     useEffect(() => {
         fetchBooks();
@@ -23,10 +29,10 @@ const FetchGoogleBooks = () => {
     }
 
     if (loading) {
-        return <div>LOADING...</div>
+        return <div className="flex text-8xl justify-center mt-20">LOADING...</div>
     }
 
-    return <Table data={books}/>;
+    return <Table data={books} selectedRow={selectedRow} onRowClick={handleRowClick}/>;
 }
 
 export default FetchGoogleBooks
