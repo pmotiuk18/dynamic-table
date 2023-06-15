@@ -1,6 +1,7 @@
 import axios, {get} from "axios";
 import {useEffect, useState} from "react";
 import Table from "./Table";
+import DetailedData from "./DetailedData";
 
 const FetchGoogleBooks = () => {
     const [books, setBooks] = useState([]);
@@ -32,7 +33,12 @@ const FetchGoogleBooks = () => {
         return <div className="flex text-8xl justify-center mt-20">LOADING...</div>
     }
 
-    return <Table data={books} selectedRow={selectedRow} onRowClick={handleRowClick}/>;
+    return (
+        <>
+            {selectedRow && <DetailedData data={selectedRow}/>}
+            <Table data={books} selectedRow={selectedRow} onRowClick={handleRowClick}/>
+        </>
+    );
 }
 
 export default FetchGoogleBooks

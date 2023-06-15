@@ -16,7 +16,7 @@ export default function Table({data, onRowClick, selectedRow}) {
                     className={selectedRow === book ? 'bg-gray-500' : 'cursor-pointer bg-gray-700 '}
                 >
                     <td className="border-2 border-white text-white">{book.id}</td>
-                    <td className="border-2 border-white text-white">{book.volumeInfo.authors}</td>
+                    <td className="border-2 border-white text-white">{book.volumeInfo.authors || "Unknown"}</td>
                     <td className="border-2 border-white text-white">{book.volumeInfo.title}</td>
                 </tr>
             ))}
