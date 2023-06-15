@@ -8,24 +8,24 @@ export default function Table({data}) {
         setSelectedRow(selectedRow)
     }
     return (
-        <table>
+        <table className="max-w-5xl my-0 mx-auto justify-center">
             <thead>
             <tr>
-                <th>ID</th>
-                <th>Author</th>
-                <th>Title</th>
+                <th className="bg-gray-800 border-2 border-white text-white">ID</th>
+                <th className="bg-gray-800 border-2 border-white text-white">Author</th>
+                <th className="bg-gray-800 border-2 border-white text-white">Title</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody className="text-white">
             {data.map((book) => (
                 <tr
                     key={book.id}
                     onClick={() => handleRowClick(book)}
-                    className={selectedRow === book ? 'bg-green-200' : ''}
+                    className={selectedRow === book ? 'bg-gray-500' : 'cursor-pointer bg-gray-700 '}
                 >
-                    <td>{book.id}</td>
-                    <td>{book.volumeInfo.authors}</td>
-                    <td>{book.volumeInfo.title}</td>
+                    <td className="border-2 border-white text-white">{book.id}</td>
+                    <td className="border-2 border-white text-white">{book.volumeInfo.authors}</td>
+                    <td className="border-2 border-white text-white">{book.volumeInfo.title}</td>
                 </tr>
             ))}
             </tbody>
