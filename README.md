@@ -1,3 +1,16 @@
+Dynamic table with row selection and
+breadcrumb.
+
+HIGHLIGHT POINTS
+• React.js
+• TypeScript/JavaScript
+• CSS/SASS
+• HTML
+• Rest API
+• Table
+• Breadcrumb
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
