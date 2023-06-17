@@ -2,16 +2,23 @@ import axios, {get} from "axios";
 import {useEffect, useState} from "react";
 import Table from "./Table";
 import DetailedData from "./DetailedData";
+import Breadcrumb from "./Breadcrumb";
 
 const FetchGoogleBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
-    console.log(selectedRow)
+    const [historyLink, setHistoryLink] = useState([]);
 
     const handleRowClick = (selectedRow) => {
         setSelectedRow(selectedRow)
+        setHistoryLink((prevHistoryLink) => [...prevHistoryLink, selectedRow]);
+    }
+
+    const handleBreadcrumbClick = (index) => {
+        setHistoryLink((prevHistoryLink) => prevHistoryLink.slice(0, index + 1));
+        setSelectedRow(historyLink[index]);
     }
 
     useEffect(() => {
@@ -30,11 +37,12 @@ const FetchGoogleBooks = () => {
     }
 
     if (loading) {
-        return <div className="flex text-8xl justify-center mt-20">LOADING...</div>
+        return <div className="flex text-6xl lg:text-8xl justify-center mt-20">LOADING...</div>
     }
 
     return (
         <>
+            <Breadcrumb historyLink={historyLink} onBreadcrumbClick={handleBreadcrumbClick}/>
             {selectedRow && <DetailedData data={selectedRow}/>}
             <Table data={books} selectedRow={selectedRow} onRowClick={handleRowClick}/>
         </>
