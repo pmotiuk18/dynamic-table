@@ -3,12 +3,14 @@ import {useEffect, useState} from "react";
 import Table from "./Table";
 import DetailedData from "./DetailedData";
 import Breadcrumb from "./Breadcrumb";
+import Center from "./Center";
 
 const FetchGoogleBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
+    console.log(selectedRow)
     const [historyLink, setHistoryLink] = useState([]);
 
     const handleRowClick = (selectedRow) => {
@@ -41,11 +43,13 @@ const FetchGoogleBooks = () => {
     }
 
     return (
-        <>
+        <Center>
+            <div className="grid grid-cols-1 lg:grid-cols-2">
             <Breadcrumb historyLink={historyLink} onBreadcrumbClick={handleBreadcrumbClick}/>
             {selectedRow && <DetailedData data={selectedRow}/>}
+            </div>
             <Table data={books} selectedRow={selectedRow} onRowClick={handleRowClick}/>
-        </>
+        </Center>
     );
 }
 

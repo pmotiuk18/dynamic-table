@@ -1,7 +1,6 @@
 export default function Table({data, onRowClick, selectedRow}) {
-
     return (
-        <table className="my-0 mx-auto justify-center">
+        <table>
             <thead>
             <tr>
                 <th className="bg-gray-800 border-2 border-white text-white">ID</th>
