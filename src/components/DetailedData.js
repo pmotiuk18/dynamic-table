@@ -23,7 +23,7 @@ export default function DetailedData({data}) {
     );
 
     return (
-        <div className="my-0 mx-auto bg-green-200 rounded-xl border-2 border-red-500 p-4 gap-2 grid">
+        <div className="min-w-100px my-0 mx-auto bg-green-200 rounded-xl border-2 border-red-500 p-4 gap-2 grid">
             <h1 className="text-2xl">Detailed Data:</h1>
             <img className="max-w-[70px] max-h-[70px]" src={smallThumbnail} alt="Book cover"/>
             {renderField("ID", id)}
