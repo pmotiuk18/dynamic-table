@@ -17,7 +17,7 @@ const FetchGoogleBooks = () => {
     }
 
     const handleBreadcrumbClick = (index) => {
-        setHistoryLink((prevHistoryLink) => prevHistoryLink.slice(0, index + 1));
+        setHistoryLink((prevHistoryLink) => prevHistoryLink.slice(0, index + 2));
         setSelectedRow(historyLink[index]);
     }
 

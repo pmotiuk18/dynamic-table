@@ -16,9 +16,9 @@ export default function Table({data, onRowClick, selectedRow}) {
                     onClick={() => onRowClick(book)}
                     className={selectedRow === book ? 'bg-gray-500' : 'cursor-pointer bg-gray-700 '}
                 >
-                    <td className="border-2 border-white text-white">{book.id}</td>
-                    <td className="border-2 border-white text-white">{book.volumeInfo.authors || "Unknown"}</td>
-                    <td className="border-2 border-white text-white">{book.volumeInfo.title}</td>
+                    <td className={book.id ? "border-2 border-white text-white" : "border-2 border-white bg-red-500"}>{book.id}</td>
+                    <td className={book.volumeInfo.authors ? "border-2 border-white text-white" : "border-2 border-white bg-red-500"}>{book.volumeInfo.authors || "Unknown"}</td>
+                    <td className={book.volumeInfo.title ? "border-2 border-white text-white" : "border-2 border-white bg-red-500"}>{book.volumeInfo.title}</td>
                 </tr>
             ))}
             </tbody>
