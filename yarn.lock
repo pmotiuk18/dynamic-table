@@ -4160,6 +4160,11 @@
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-10.0.0.tgz"
   "version" "10.0.0"
 
+"dotenv@^16.3.0":
+  "integrity" "sha512-tHB+hmf8MRCkT3VVivGiG8kq9HiGTmQ3FzOKgztfpJQH1IWuZTOvKSJmHNnQPowecAmkCJhLrxdPhOr06LLqIQ=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.3.0.tgz"
+  "version" "16.3.0"
+
 "draht@1.0.1":
   "integrity" "sha512-yNNHL864dniNmIE9ZKD++mKypiAUAvVZtyV0QrbXH/ak3ebzFqo5xsmRBRqV8pZVhImOSBiyq500Wcmrf44zAg=="
   "resolved" "https://registry.npmjs.org/draht/-/draht-1.0.1.tgz"
