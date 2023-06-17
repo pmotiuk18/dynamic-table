@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 export default function Breadcrumb({historyLink, onBreadcrumbClick}) {
     return <div>
         <ul>
